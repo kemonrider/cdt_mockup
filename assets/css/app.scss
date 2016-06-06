@@ -1,0 +1,84 @@
+// --------------------
+// variable
+$primary-color:#ccc;
+$box-shadow-default:0 0 0 $primary-color;
+$border-default:1px solid $primary-color;
+
+// --------------------
+// mixin
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin clearfix(){
+  &:before, &:after {content:''; display:block; clear:both; width:100%;}
+}
+
+// --------------------
+// general styling
+.box-shadow {@include box-shadow(0,0,15px,$primary-color);}
+.box-padding {padding:20px;}
+
+// status
+.status--success {background:#449d44;}
+.status--warning {background:#f0ad4e;}
+.status--danger {background:#d43f3a;}
+
+.status--success, .status--warning, .status--danger {color:#fff;
+  a {color:#fff;}
+}
+
+// --------------------
+// auth group
+.page-group-auth {
+  .form-wrapper {margin-top:150px;}
+}
+
+// --------------------
+// dashboard
+.page-dashboard {
+  // demands
+  .demands {
+    .demands--list {}
+    .demands--paging {text-align:center;}
+  }
+  //
+    .demand--id {width:10%;}
+    .demand--channel {width:10%;}
+    .demand--client {width:10%;}
+    .demand--type {width:10%;}
+    .demand--status {width:10%;}
+    .demand--createdat {width:15%;}
+    .demand--duedate {width:15%;}
+    .demand--urgency {width:10%;}
+    .demand--leadtime {width:10%;}
+  // demand
+  .demand {
+    &+.demand {margin-top:12px;}
+    .demand--header {@include clearfix(); border:$border-default;
+      &>div {float:left; padding:6px;
+        &+div {border-left:$border-default;}
+      }
+    }
+    .demand--body {padding:0 12px;}
+  }
+  // items
+  .items {border:$border-default; border-top:0; padding:12px;
+    .items--list {}
+  }
+  // item
+  .item {}
+}
+
+// --------------------
+// item detail
+.page.page-item-detail {padding-bottom:100px;}
+

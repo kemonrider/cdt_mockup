@@ -1,0 +1,70 @@
+.box-shadow {
+  -webkit-box-shadow: 0 0 15px #ccc;
+  -moz-box-shadow: 0 0 15px #ccc;
+  box-shadow: 0 0 15px #ccc; }
+
+.box-padding {
+  padding: 20px; }
+
+.status--success {
+  background: #449d44; }
+
+.status--warning {
+  background: #f0ad4e; }
+
+.status--danger {
+  background: #d43f3a; }
+
+.status--success, .status--warning, .status--danger {
+  color: #fff; }
+  .status--success a, .status--warning a, .status--danger a {
+    color: #fff; }
+
+.page-group-auth .form-wrapper {
+  margin-top: 150px; }
+
+.page-dashboard .demands .demands--paging {
+  text-align: center; }
+.page-dashboard .demand--id {
+  width: 10%; }
+.page-dashboard .demand--channel {
+  width: 10%; }
+.page-dashboard .demand--client {
+  width: 10%; }
+.page-dashboard .demand--type {
+  width: 10%; }
+.page-dashboard .demand--status {
+  width: 10%; }
+.page-dashboard .demand--createdat {
+  width: 15%; }
+.page-dashboard .demand--duedate {
+  width: 15%; }
+.page-dashboard .demand--urgency {
+  width: 10%; }
+.page-dashboard .demand--leadtime {
+  width: 10%; }
+.page-dashboard .demand + .demand {
+  margin-top: 12px; }
+.page-dashboard .demand .demand--header {
+  border: 1px solid #ccc; }
+  .page-dashboard .demand .demand--header:before, .page-dashboard .demand .demand--header:after {
+    content: '';
+    display: block;
+    clear: both;
+    width: 100%; }
+  .page-dashboard .demand .demand--header > div {
+    float: left;
+    padding: 6px; }
+    .page-dashboard .demand .demand--header > div + div {
+      border-left: 1px solid #ccc; }
+.page-dashboard .demand .demand--body {
+  padding: 0 12px; }
+.page-dashboard .items {
+  border: 1px solid #ccc;
+  border-top: 0;
+  padding: 12px; }
+
+.page.page-item-detail {
+  padding-bottom: 100px; }
+
+/*# sourceMappingURL=app.css.map */
