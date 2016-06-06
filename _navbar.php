@@ -17,7 +17,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="dashboard.php">Client Demand Tool</a>
+      <a class="navbar-brand" href="dashboard.php?role=<?php echo("$role") ?>">Client Demand Tool</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
