@@ -58,9 +58,17 @@
       
       <div class="row">
         <div class="col-sm-2">
-          <label class="control-label">MBIZ SKU</label>
+          <label class="control-label">MBIZ SKU Exist</label>
         </div>
-        <div class="col-sm-10">
+        <div class="col-sm-2">
+          <select  class="form-control">
+            <option>EXIST</option>
+            <option>NOT EXIST</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-2">
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -89,10 +97,14 @@
           <label class="control-label">Item Found</label>
         </div>
         <div class="col-sm-2">
-          <select  class="form-control">
-            <option>FOUND</option>
-            <option>NOT FOUND</option>
-          </select>
+          <?php if($role == "ca" || $role == "client"){ ?>
+            <p class="form-control-static">FOUND</p>
+          <?php } elseif($role == "sourcing")  { ?>
+            <select  class="form-control">
+              <option>FOUND</option>
+              <option>NOT FOUND</option>
+            </select>
+          <?php } ?>
         </div>
       </div><!-- .row -->
       <div class="row">
@@ -129,6 +141,7 @@
                 <td>SKU1234567</td>
                 <td>LIVE</td>
               </tr>
+              <?php if($role == "sourcing"){ ?>
               <tr>
                 <td><input type="text" class="form-control"></td>
                 <td><input type="text" class="form-control"></td>
@@ -139,6 +152,7 @@
                 <td><input type="text" class="form-control"></td>
                 <td><input type="text" class="form-control"></td>
               </tr>
+              <?php } ?>
             </tbody>
           </table>
         </div>
@@ -149,10 +163,14 @@
           <label class="control-label">Item Alternative</label>
         </div>
         <div class="col-sm-2">
-          <select  class="form-control">
-            <option>NO</option>
-            <option>YES</option>
-          </select>
+          <?php if($role == "ca"){ ?>
+            <p class="form-control-static">NO</p>
+          <?php } elseif($role == "sourcing") { ?>
+            <select  class="form-control">
+              <option>NO</option>
+              <option>YES</option>
+            </select>
+          <?php } ?>
         </div>
       </div><!-- .row -->
       <div class="row">
@@ -192,17 +210,19 @@
                 <td>SKU1234567</td>
                 <td>LIVE</td>
               </tr>
-              <tr>
-                <td><input type="text" class="form-control"></td>
-                <td><input type="text" class="form-control"></td>
-                <td><input type="text" class="form-control"></td>
-                <td><input type="text" class="form-control"></td>
-                <td><input type="text" class="form-control"></td>
-                <td><input type="text" class="form-control"></td>
-                <td><input type="text" class="form-control"></td>
-                <td><input type="text" class="form-control"></td>
-                <td><input type="text" class="form-control"></td>
-              </tr>
+              <?php if($role == "sourcing"){ ?>
+                <tr>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+              <?php } ?>
             </tbody>
           </table>
         </div>

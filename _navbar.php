@@ -1,6 +1,7 @@
 <?php
   if (isset($_GET['role'])) {
     $role = $_GET['role'];
+    $role = strtolower($role);
   }else{
     header("Location: auth.login.php");
     die();

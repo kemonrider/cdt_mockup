@@ -4,7 +4,11 @@
 <div class="page page-dashboard box-padding">
 
   <div class="demands">
-    <h2 class="title">Client Demands <a href="demand.new.php<?php echo("?role=$role") ?>" class="label label-default">New</a></h2>
+    <h2 class="title">Client Demands
+      <?php if($role == "ca" || $role == "client"){ ?> 
+        <a href="demand.new.php<?php echo("?role=$role") ?>" class="label label-default">New</a>
+      <?php } ?>
+    </h2>
     <table class="table table-bordered table-hover list">
       <thead>
         <tr>
