@@ -10,7 +10,6 @@ var toggleElement = function(){
         }else{
           $(this).hide();
         }
-        console.log(selectVal);
       });
     });
   });

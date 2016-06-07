@@ -114,6 +114,7 @@
         </div><!-- .row -->
       </div><!-- .item-exist -->
       
+      <?php if($role != "ca"){ ?>
       <div class="item-found">
         <div class="row">
           <div class="col-sm-2">
@@ -130,8 +131,8 @@
             <?php } ?>
           </div>
         </div><!-- .row -->
-        <div class="row" data-toggle-child="item-found" data-toggle-key="false">
-          <div class="col-sm-10 col-sm-offset-2 default-hidden">
+        <div class="row default-hidden" data-toggle-child="item-found" data-toggle-key="false">
+          <div class="col-sm-10 col-sm-offset-2">
             <div class="form-group">
               <div class="col-sm-3"><label class="control-label">Not Found Reason : </label></div>
               <div class="col-sm-4">
@@ -153,72 +154,91 @@
         </div><!-- .row -->
         <div class="row" data-toggle-child="item-found" data-toggle-key="true">
           <div class="col-sm-10 col-sm-offset-2">
-            <table class="table table-bordered">
-              <thead>
-                <th>Vendor</th>
-                <th>PIC</th>
-                <th>PIC Phone Number</th>
-                <th>Price</th>
-                <th>Tax Status</th>
-                <th>Availability</th>
-                <th>Mbiz SKU</th>
-                <th>Live Status</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>AAA</td>
-                  <td>Ahmad Ramdani</td>
-                  <td>081234567890</td>
-                  <td>Rp 123.456</td>
-                  <td>PKP</td>
-                  <td>AVAILABLE</td>
-                  <?php if($role == "content"){ ?>
+            <?php if($role == "sourcing"){ ?>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Vendor</th>
+                    <th>PIC</th>
+                    <th>PIC Phone Number</th>
+                    <th>Price</th>
+                    <th>Tax Status</th>
+                    <th>Availability</th>
+                    <th>Reference</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
                     <td><input type="text" class="form-control"></td>
-                  <?php }else{ ?>
-                    <td>SKU1234567</td>
-                  <?php } ?>
-                  <?php if($role == "va"){ ?>
-                    <td><label class="control-label text-center"><input type="checkbox"></label></td>
-                  <?php } else { ?>
-                    <td>LIVE</td>
-                  <?php } ?>
-                </tr>
-                <tr>
-                  <td>AAA</td>
-                  <td>Ahmad Ramdani</td>
-                  <td>081234567890</td>
-                  <td>Rp 123.456</td>
-                  <td>NON PKP</td>
-                  <td>AVAILABLE</td>
-                  <?php if($role == "content"){ ?>
                     <td><input type="text" class="form-control"></td>
-                  <?php }else{ ?>
-                    <td>SKU1234567</td>
-                  <?php } ?>
-                  <?php if($role == "va"){ ?>
-                    <td><label class="control-label text-center"><input type="checkbox"></label></td>
-                  <?php } else { ?>
-                    <td>LIVE</td>
-                  <?php } ?>
-                </tr>
-                <?php if($role == "sourcing"){ ?>
-                <tr>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td><input type="text" class="form-control"></td>
-                  <td>-</td>
-                </tr>
-                <?php } ?>
-              </tbody>
-            </table>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                    <td><input type="text" class="form-control"></td>
+                  </tr>
+                </tbody>
+              </table>
+            <?php } else { ?>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Vendor</th>
+                    <th>PIC</th>
+                    <th>PIC Phone Number</th>
+                    <th>Price</th>
+                    <th>Tax Status</th>
+                    <th>Availability</th>
+                    <th>Mbiz SKU</th>
+                    <th>Live Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>AAA</td>
+                    <td>Ahmad Ramdani</td>
+                    <td>081234567890</td>
+                    <td>Rp 123.456</td>
+                    <td>PKP</td>
+                    <td>AVAILABLE</td>
+                    <?php if($role == "content"){ ?>
+                      <td><input type="text" class="form-control"></td>
+                    <?php }else{ ?>
+                      <td>SKU1234567</td>
+                    <?php } ?>
+                    <?php if($role == "va"){ ?>
+                      <td><label class="control-label text-center"><input type="checkbox"></label></td>
+                    <?php } else { ?>
+                      <td>LIVE</td>
+                    <?php } ?>
+                  </tr>
+                  <tr>
+                    <td>AAA</td>
+                    <td>Ahmad Ramdani</td>
+                    <td>081234567890</td>
+                    <td>Rp 123.456</td>
+                    <td>NON PKP</td>
+                    <td>AVAILABLE</td>
+                    <?php if($role == "content"){ ?>
+                      <td><input type="text" class="form-control"></td>
+                    <?php }else{ ?>
+                      <td>SKU1234567</td>
+                    <?php } ?>
+                    <?php if($role == "va"){ ?>
+                      <td><label class="control-label text-center"><input type="checkbox"></label></td>
+                    <?php } else { ?>
+                      <td>LIVE</td>
+                    <?php } ?>
+                  </tr>
+                </tbody>
+              </table>
+            <?php } ?>
           </div>
         </div><!-- .row -->
       </div><!-- .item-found -->
+      <?php } ?>
         
+      <?php if($role != "ca"){ ?>
       <div class="item-alternative">
         <div class="row">
           <div class="col-sm-2">
@@ -228,67 +248,30 @@
             <?php if($role == "ca"){ ?>
               <p class="form-control-static">NO</p>
             <?php } elseif($role == "sourcing") { ?>
-              <select  class="form-control">
-                <option>NO</option>
-                <option>YES</option>
+              <select  class="form-control" data-toggle-action="item-alternative">
+                <option value="false">NO</option>
+                <option value="true">YES</option>
               </select>
             <?php } ?>
           </div>
         </div><!-- .row -->
         <div class="row">
           <div class="col-sm-10 col-sm-offset-2">
-            <table class="table table-bordered">
-              <thead>
-                <th>Product Name</th>
-                <th>Vendor</th>
-                <th>PIC</th>
-                <th>PIC Phone Number</th>
-                <th>Price</th>
-                <th>Tax Status</th>
-                <th>Availability</th>
-                <th>Mbiz SKU</th>
-                <th>Live Status</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Lenovo</td>
-                  <td>AAA</td>
-                  <td>Ahmad Ramdani</td>
-                  <td>081234567890</td>
-                  <td>Rp 123.456</td>
-                  <td>PKP</td>
-                  <td>AVAILABLE</td>
-                                  <?php if($role == "content"){ ?>
-                    <td><input type="text" class="form-control"></td>
-                  <?php }else{ ?>
-                    <td>SKU1234567</td>
-                  <?php } ?>
-                  <?php if($role == "va"){ ?>
-                    <td><label class="control-label text-center"><input type="checkbox"></label></td>
-                  <?php } else { ?>
-                    <td>LIVE</td>
-                  <?php } ?>
-                </tr>
-                <tr>
-                  <td>Sony VAIO</td>
-                  <td>AAA</td>
-                  <td>Ahmad Ramdani</td>
-                  <td>081234567890</td>
-                  <td>Rp 123.456</td>
-                  <td>NON PKP</td>
-                  <td>AVAILABLE</td>
-                                  <?php if($role == "content"){ ?>
-                    <td><input type="text" class="form-control"></td>
-                  <?php }else{ ?>
-                    <td>SKU1234567</td>
-                  <?php } ?>
-                  <?php if($role == "va"){ ?>
-                    <td><label class="control-label text-center"><input type="checkbox"></label></td>
-                  <?php } else { ?>
-                    <td>LIVE</td>
-                  <?php } ?>
-                </tr>
-                <?php if($role == "sourcing"){ ?>
+            <?php if($role == "sourcing"){ ?>
+              <table class="table table-bordered default-hidden" data-toggle-child="item-alternative" data-toggle-key="true">
+                <thead>
+                  <tr>
+                    <th>Product Name</th>
+                    <th>Vendor</th>
+                    <th>PIC</th>
+                    <th>PIC Phone Number</th>
+                    <th>Price</th>
+                    <th>Tax Status</th>
+                    <th>Availability</th>
+                    <th>Reference</th>
+                  </tr>
+                </thead>
+                <tbody>
                   <tr>
                     <td><input type="text" class="form-control"></td>
                     <td><input type="text" class="form-control"></td>
@@ -298,14 +281,68 @@
                     <td><input type="text" class="form-control"></td>
                     <td><input type="text" class="form-control"></td>
                     <td><input type="text" class="form-control"></td>
-                    <td>-</td>
                   </tr>
-                <?php } ?>
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            <?php }else{ ?>
+              <table class="table table-bordered">
+                <thead>
+                  <th>Product Name</th>
+                  <th>Vendor</th>
+                  <th>PIC</th>
+                  <th>PIC Phone Number</th>
+                  <th>Price</th>
+                  <th>Tax Status</th>
+                  <th>Availability</th>
+                  <th>Mbiz SKU</th>
+                  <th>Live Status</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Lenovo</td>
+                    <td>AAA</td>
+                    <td>Ahmad Ramdani</td>
+                    <td>081234567890</td>
+                    <td>Rp 123.456</td>
+                    <td>PKP</td>
+                    <td>AVAILABLE</td>
+                                    <?php if($role == "content"){ ?>
+                      <td><input type="text" class="form-control"></td>
+                    <?php }else{ ?>
+                      <td>SKU1234567</td>
+                    <?php } ?>
+                    <?php if($role == "va"){ ?>
+                      <td><label class="control-label text-center"><input type="checkbox"></label></td>
+                    <?php } else { ?>
+                      <td>LIVE</td>
+                    <?php } ?>
+                  </tr>
+                  <tr>
+                    <td>Sony VAIO</td>
+                    <td>AAA</td>
+                    <td>Ahmad Ramdani</td>
+                    <td>081234567890</td>
+                    <td>Rp 123.456</td>
+                    <td>NON PKP</td>
+                    <td>AVAILABLE</td>
+                                    <?php if($role == "content"){ ?>
+                      <td><input type="text" class="form-control"></td>
+                    <?php }else{ ?>
+                      <td>SKU1234567</td>
+                    <?php } ?>
+                    <?php if($role == "va"){ ?>
+                      <td><label class="control-label text-center"><input type="checkbox"></label></td>
+                    <?php } else { ?>
+                      <td>LIVE</td>
+                    <?php } ?>
+                  </tr>
+                </tbody>
+              </table>
+            <?php } ?>
           </div>
         </div><!-- .row -->
       </div><!-- .item-alternative -->
+      <?php } ?>
     
       <div class="row">
         <div class="col-sm-4 col-sm-offset-8">
