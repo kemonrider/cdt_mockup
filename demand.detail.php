@@ -103,14 +103,24 @@
         </table>
       </div><!-- .row -->
       
+      <?php if($role == "ca"){ ?>
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
-          <a href="#" class="btn btn-danger btn-block">REJECT</a>
+          <label class="control-label">Rejected reason : </label>
+          <input type="text" class="form-control">
+          <a href="dashboard.php?role=<?php echo("$role") ?>" class="btn btn-danger btn-block">REJECT</a>
         </div>
         <div class="col-sm-4">
-          <a href="#" class="btn btn-primary btn-block">CONFIRM</a>
+          <a href="dashboard.php?role=<?php echo("$role") ?>" class="btn btn-primary btn-block">CONFIRM</a>
         </div>
       </div><!-- .row -->
+      <?php }else{ ?>
+        <div class="row">
+          <div class="col-sm-4">
+            <a href="dashboard.php?role=<?php echo("$role") ?>" class="btn btn-default btn-block">BACK</a>
+          </div>
+        </div>
+      <?php } ?>
       
     </form>
     
