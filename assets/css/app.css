@@ -6,6 +6,9 @@
 .box-padding {
   padding: 20px; }
 
+.default-hidden {
+  display: none; }
+
 .status--success {
   background: #449d44; }
 
